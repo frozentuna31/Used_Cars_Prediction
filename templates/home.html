@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Prediction</title>
+</head>
+  <head>
+    <title>Used Car Prediction</title>
+    
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      color: #eee;
+      }
+      body {
+      background: url("https://c1.wallpaperflare.com/preview/508/250/386/porsche-oldtimer-m%C3%BChlheim-mulhouse.jpg") no-repeat center;
+      background-size: cover;
+      }
+      h1, h2 {
+      text-transform: uppercase;
+      font-weight: 1000;
+      }
+      h2 {
+      margin: 0 0 10 8px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 24px;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .fa-graduation-cap {
+      font-size: 72px;
+     
+      }
+      form {
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 25px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: #26a9e0;
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px; 
+      border: none;
+      background: #26a9e0; 
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item {
+      display: inline-block;
+      margin: 20px 5px 0;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>Used Car Prediction</h1>
+        <p>&emsp;©2021 Rafi Rasyid</p>
+        <div class="btn-group">
+        </div>
+      </div>
+      <form action="{{ url_for('predict')}}" method="post">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Car Spesification</h2>
+        </div>
+        <div class="info">
+          <select name="Brand"  id="Brand" required="required">
+                               <option value="BMW">BMW</option>
+                               <option value="Bentley">Bentley</option>
+                               <option value="Chevrolet">Chevrolet</option>
+                               <option value="Datsun">Datsun</option>
+                               <option value="Fiat">Fiat</option>
+                               <option value="Ford">Ford</option>
+                               <option value="Honda">Honda</option>
+                               <option value="Hyundai">Hyundai</option>
+                               <option value="Isuzu">Isuzu</option>
+                               <option value="Jaguar">Jaguar</option>
+                               <option value="Jeep">Jeep</option>
+                               <option value="Land">Land</option>
+                               <option value="Mahindra">Mahindra</option>
+                               <option value="Maruti">Maruti</option>
+                               <option value="Mercedes-Benz">Mercedes-Benz</option>
+                               <option value="Mini">Mini</option>
+                               <option value="Mitsubishi">Mitsubishi</option>
+                               <option value="Nissan">Nissan</option>
+                               <option value="Porsche">Porsche</option>
+                               <option value="Renault">Renault</option>
+                               <option value="Skoda">Skoda</option>
+                               <option value="Tata">Tata</option>
+                               <option value="Toyota">Toyota</option>
+                               <option value="Volkswagen">Volkswagen</option>
+                               <option value="Volvo">Volvo</option>
+          </select>
+          <select name="Transmission"  id="Transmission" required="required">
+                                <option value="Manual">Manual</option>
+                                <option value="Automatic">Automatic</option>
+          </select>
+          <select name="Fuel_Type"  id="Fuel_Type" required="required">
+                                <option value="Diesel">Diesel</option>
+                                <option value="LPG">LPG</option>
+                                <option value="CNG">CNG</option>
+          </select>
+          <input name="Year" id="Year"  type="number "placeholder="Year" required="required">
+          <input name="Kilometers_Driven" id="Kilometers_Driven" type="number "placeholder="Kilometers_Driven (Kilometers)" required="required">
+          <input name="Mileage"  id="Mileage" type="number "placeholder="Mileage (Kilometer per Liter/kmpl)" required="required">
+          <input name="Engine"  id="Engine" type="number "placeholder="Engine (CC)" required="required">
+          <input name="Power"  id="Power" type="number "placeholder="Power (Brake Horse Power/bhp)" required="required">
+          <input name="Seats"  id="Seats" type="number "placeholder="Seats" required="required">
+
+          <select name="Location" id="Location" required="required"  placeholder="Location">
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Kochi ">Kochi </option>
+                                <option value="Kolkata ">Kolkata </option>
+                                <option value="Mumbai ">Mumbai </option>
+                                <option value="Pune ">Pune </option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+          </select>
+                
+        </div>
+        <button type="submit" href="/">Calculate the Price</button>
+        <h3>{{ prediction_text }}</h3>
+      </form>
+     
+    </div>
+  </body>
+</html>
