@@ -14,8 +14,8 @@ joblib==0.15.1
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 mccabe==0.6.1
-numpy==1.18.1
-pandas==1.0.1
+numpy
+pandas
 pickle-mixin==1.0.2
 pylint==2.6.0
 python-dateutil==2.8.1
