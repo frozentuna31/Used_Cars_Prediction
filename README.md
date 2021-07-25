@@ -9,6 +9,7 @@
 - [Directory Tree](#Tree)
 - [Packages Used](#Packages)
 - [Bug / Issue](#Bug)
+- [Dataset's Source and Notebook](#Source)
 - [Future Development](#Development)
 
 ## Overview <a name="Overview"></a>
@@ -66,6 +67,12 @@ to deploy the web app.
 ## Bug / Issue <a name="Bug"></a>
 
 If someone found a bug (the web gives unwanted results or some errors), please open an issue [here](https://github.com/frozentuna31/Used_Cars_Prediction/issues) by including your search query and desired result.
+
+## Dataset's Source and Notebook <a name="Source"></a>
+
+The train and test dataset is taken from Kaggle, if you want to see the source of those dataset or the dataset analysis in kaggle notebook, check out here:
+- [Source](https://www.kaggle.com/avikasliwal/used-cars-price-prediction)
+- [Kaggle notebook](hhttps://www.kaggle.com/studyvortex/used-car-prediction-elastic-net-lasso-rforest)
 
 ## Future Development <a name="Development"></a>
 
