@@ -72,7 +72,7 @@ If someone found a bug (the web gives unwanted results or some errors), please o
 
 The train and test dataset is taken from Kaggle, if you want to see the source of those dataset or the dataset analysis in kaggle notebook, check out here:
 - [Source](https://www.kaggle.com/avikasliwal/used-cars-price-prediction)
-- [Kaggle notebook](hhttps://www.kaggle.com/studyvortex/used-car-prediction-elastic-net-lasso-rforest)
+- [Kaggle notebook](https://www.kaggle.com/studyvortex/used-car-prediction-elastic-net-lasso-rforest)
 
 ## Future Development <a name="Development"></a>
 
